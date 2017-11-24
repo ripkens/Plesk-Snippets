@@ -8,7 +8,7 @@ echo "EMail - Passwörter\n";
 $res = mysqli_query($db, "SELECT CONCAT_WS('@',mail.mail_name,domains.name) as mail ,accounts.password FROM domains,mail,accounts WHERE domains.id=mail.dom_id AND accounts.id=mail.account_id ORDER BY mail AS
 C");
 
-while($row = mysql_fetch_assoc($res))
+while($row = mysqli_fetch_assoc($res))
 {
     if($row['password'] != '')
     {
